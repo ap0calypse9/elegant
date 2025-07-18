@@ -10,7 +10,7 @@ const metrics = [
   },
   {
     icon: <Globe className="w-8 h-8 text-purple-600" />,
-    value: 25,
+    value: 20,
     label: 'Websites Created',
     suffix: '+'
   },
@@ -34,7 +34,7 @@ const metrics = [
   },
   {
     icon: <Zap className="w-8 h-8 text-pink-600" />,
-    value: 475,
+    value: 470,
     label: 'Projects Completed',
     suffix: '+'
   }
@@ -89,7 +89,7 @@ const AnimatedCounter = ({ value, duration = 2000 }) => {
 
 const AnimatedMetrics = () => {
   return (
-    <section id="metrics" className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section id="metrics" className="relative py-20 bg-gradient-to-br from-blue-50/70 to-purple-50/70 backdrop-blur-sm z-10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Impact</h2>

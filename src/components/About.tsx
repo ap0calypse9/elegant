@@ -3,7 +3,7 @@ import { Target, Users, Lightbulb, Award } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="relative py-20 bg-white/70 backdrop-blur-sm z-10">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">

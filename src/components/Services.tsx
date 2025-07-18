@@ -2,7 +2,7 @@ import React from 'react';
 import { Palette, Globe, PenTool, TrendingUp, Brain, Image } from 'lucide-react';
 
 const services = [
-    {
+  {
     icon: <PenTool className="w-12 h-12 text-green-600" />,
     title: 'Content Writing',
     description: 'Crafting compelling content that resonates with your audience and drives action across all platforms.',
@@ -43,7 +43,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="relative py-20 bg-white/70 backdrop-blur-sm z-10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
