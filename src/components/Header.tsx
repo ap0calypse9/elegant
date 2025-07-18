@@ -10,7 +10,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">E</span>
+              <img src="/ele.png" alt="Logo" className="w-full h-full object-contain" />
             </div>
             <span className="text-xl font-bold text-gray-800">Elegant Research Solution</span>
           </div>
