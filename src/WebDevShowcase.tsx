@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const showcaseData = [
   {
-    title: "Serene",
+    title: "Serenity",
     image: "/cafe.png", // store preview in /public
     description: "A clean responsive cafe site with menu, gallery, and contact.",
     link: "https://serene-cafee.netlify.app/",
