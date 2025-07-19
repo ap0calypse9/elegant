@@ -61,7 +61,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <MapPin size={16} />
-                <span>Pruden Prana, Kolkata</span>
+                <span>
+                  <a href='https://www.google.com/maps/place/Elegant+Research+Solution/@22.4722321,88.3849198,17z/data=!4m8!3m7!1s0x3a0271533f0a9431:0x8301d6bfbb06b99!8m2!3d22.4722321!4d88.3849198!9m1!1b1!16s%2Fg%2F11g_zfnmrw?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D'>
+                      Baishnabghata, Patuli, Kolkata
+                  </a>
+                </span>
               </li>
             </ul>
           </div>

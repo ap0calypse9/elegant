@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Palette, Globe, PenTool, TrendingUp, Brain, Image } from 'lucide-react';
 
 const services = [
@@ -6,7 +7,7 @@ const services = [
     icon: <PenTool className="w-12 h-12 text-green-600" />,
     title: 'Content Writing',
     description: 'Crafting compelling content that resonates with your audience and drives action across all platforms.',
-    features: ['Blog Writing', 'Copy Writing', 'SEO Content', 'Social Media Content']
+    features: ['Blog Writing','Thesis Writing', 'Academic Writing', 'Copy Writing', 'SEO Content', 'Social Media Content']
   },
   {
     icon: <Palette className="w-12 h-12 text-blue-600" />,
@@ -18,9 +19,8 @@ const services = [
     icon: <Globe className="w-12 h-12 text-purple-600" />,
     title: 'Website Development',
     description: 'Building responsive, fast, and user-friendly websites that drive engagement and conversions.',
-    features: ['Responsive Design', 'E-commerce', 'CMS Integration', 'Performance Optimization']
+    features: ['Responsive Design', 'Motion graphics','E-commerce', 'CMS Integration', 'Performance Optimization']
   },
-  
   {
     icon: <TrendingUp className="w-12 h-12 text-orange-600" />,
     title: 'Digital Marketing',
@@ -42,6 +42,8 @@ const services = [
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="services" className="relative py-20 bg-white/70 backdrop-blur-sm z-10">
       <div className="container mx-auto px-4">
@@ -51,28 +53,41 @@ const Services = () => {
             We offer a comprehensive suite of digital services designed to elevate your brand and drive results.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
-            >
-              <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                {service.icon}
+          {services.map((service, index) => {
+            const isWebDev = service.title === 'Website Development';
+
+            const card = (
+              <div
+                className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+              >
+                <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">{service.title}</h3>
+                <p className="text-gray-600 mb-6">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-sm text-gray-500">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              <ul className="space-y-2">
-                {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-sm text-gray-500">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            );
+
+            return (
+              <div
+                key={index}
+                className={isWebDev ? 'cursor-pointer' : ''}
+                onClick={isWebDev ? () => navigate('/web-dev') : undefined}
+              >
+                {card}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
